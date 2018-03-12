@@ -297,6 +297,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Economy"
+                android:checked="true"
                 android:id="@+id/btn_economy"
                 android:textAllCaps="true"
                 android:textColor="#000"
