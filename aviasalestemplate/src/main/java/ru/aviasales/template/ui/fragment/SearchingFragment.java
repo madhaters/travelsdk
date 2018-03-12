@@ -58,7 +58,6 @@ public class SearchingFragment extends BaseFragment {
 		setupViews(rootView);
 		showActionBar(true);
 		setTextToActionBar(getString(R.string.searching_information));
-		setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
 		setUpMrecAd();
 		setupLoadingLogo(rootView);
 		return rootView;

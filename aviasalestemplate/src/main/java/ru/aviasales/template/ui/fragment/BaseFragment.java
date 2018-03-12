@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
+import ru.aviasales.template.R;
 import ru.aviasales.template.ui.dialog.BaseDialogFragment;
 import ru.aviasales.template.utils.BackPressable;
 
@@ -109,6 +110,8 @@ public abstract class BaseFragment extends Fragment implements BackPressable {
 			return;
 		}
 		getActionBar().setTitle(textToActionBar);
+		getActionBar().setIcon(R.drawable.app_icon);
+		getActionBar().setDisplayShowHomeEnabled(true);
 	}
 
 	private void removeDialogFragment() {

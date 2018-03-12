@@ -23,13 +23,18 @@ public class MainActivity extends AppCompatActivity {
 
 		AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST));
 		setContentView(R.layout.activity_main);
-		if (getSupportActionBar()!=null) {
-			getSupportActionBar().setTitle("");
-			getSupportActionBar().setLogo(R.drawable.icon);
-			getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+
+		init();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (getSupportActionBar() != null) {
+			getSupportActionBar().setIcon(R.drawable.app_icon);
 			getSupportActionBar().setDisplayShowHomeEnabled(true);
 		}
-		init();
 	}
 
 	private void init() {

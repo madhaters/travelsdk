@@ -2,7 +2,9 @@
           package="ru.aviasales.template">
 
     <application
-        android:allowBackup="true">
+        android:allowBackup="true"
+        android:logo="@drawable/app_icon"
+        >
         <activity
             android:name="ru.aviasales.template.BrowserActivity"
             android:configChanges="orientation|screenSize"
