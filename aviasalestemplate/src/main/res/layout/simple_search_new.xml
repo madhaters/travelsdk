@@ -168,7 +168,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="Passengers"
             android:textAllCaps="true"
             android:textColor="#1D96DB"
@@ -177,33 +177,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/btn_passengers"
             android:orientation="horizontal"
             android:weightSum="3">
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_adult"
-                    android:tint="#1D96DB" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_adult"
+                        android:tint="#1D96DB" />
+
+                    <ru.aviasales.template.ui.view.AllerTextView
+                        android:id="@+id/tvMalePassengers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="2"
+                        android:textColor="#000"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
                 <ru.aviasales.template.ui.view.AllerTextView
-                    android:id="@+id/tvMalePassengers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="2"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Adults"
+                    android:textAllCaps="true"
                     android:textColor="#000"
-                    android:textSize="20sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <View
@@ -216,8 +230,12 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
                 android:layout_weight="1"
+                android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -236,6 +254,16 @@
                     android:textColor="#000"
                     android:textSize="20sp" />
             </LinearLayout>
+                <ru.aviasales.template.ui.view.AllerTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Children"
+                    android:textAllCaps="true"
+                    />
+            </LinearLayout>
 
             <View
                 android:layout_width="0.5dp"
@@ -243,12 +271,16 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:background="#BDBDBD" />
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
+                android:orientation="vertical"
                 android:layout_weight="1"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -267,6 +299,16 @@
                     android:textColor="#000"
                     android:textSize="20sp" />
             </LinearLayout>
+                <ru.aviasales.template.ui.view.AllerTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Infants"
+                    android:textColor="#000"
+                    android:textSize="12sp"
+                    android:textAllCaps="true"
+                    />
+            </LinearLayout>
         </LinearLayout>
 
         <View
@@ -278,7 +320,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="Class"
             android:textAllCaps="true"
             android:textColor="#1D96DB"
@@ -288,7 +330,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -322,7 +364,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/search_form_button"
             android:text="@string/search_form_search_button"
             android:textColor="@color/white"
