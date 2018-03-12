@@ -3,6 +3,7 @@
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+    android:background="#0c9cd0"
 		android:orientation="vertical">
 
 	<LinearLayout
@@ -17,20 +18,52 @@
 			android:layout_marginBottom="5dp"
 			android:orientation="horizontal"/>
 
-	<ImageView
-		android:layout_width="300dp"
-		android:layout_height="250dp"
-		android:src="@drawable/fly_logo"
-		android:id="@+id/flyLogo"
-		android:scaleType="fitXY"
-		android:layout_centerVertical="true"
-		/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp">
 
+        <ImageView
+            android:id="@+id/f"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/loading_dot" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/f"
+            android:layout_toStartOf="@+id/e"
+            android:scaleType="fitXY"
+            android:src="@drawable/loading_line" />
+
+        <ImageView
+            android:id="@+id/e"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/loading_dot" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/flyLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+		android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/plane"
+        android:tint="@color/white"
+		/>
 	<ProgressBar
 			android:id="@+id/pb_searching"
 			style="?android:attr/progressBarStyleHorizontal"
 			android:layout_width="match_parent"
 			android:layout_height="3dp"
+        android:visibility="gone"
 			android:layout_alignParentBottom="true"
 			android:layout_centerHorizontal="true"
 			android:layout_margin="20dp"

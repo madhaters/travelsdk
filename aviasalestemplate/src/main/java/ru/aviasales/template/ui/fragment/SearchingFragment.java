@@ -258,18 +258,18 @@ public class SearchingFragment extends BaseFragment {
 	}
 	private Animation inFromLeftAnimation() {
 		Animation inFromLeft = new TranslateAnimation(
-				Animation.RELATIVE_TO_PARENT, -1.0f,
+				Animation.RELATIVE_TO_PARENT, -.1f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f);
-		inFromLeft.setDuration(3000);
+		inFromLeft.setDuration(300);
 		inFromLeft.setInterpolator(new LinearInterpolator());
 		return inFromLeft;
 	}
 	private Animation outToRightAnimation() {
 		Animation outtoRight = new TranslateAnimation(
 				Animation.RELATIVE_TO_PARENT, 0.0f,
-				Animation.RELATIVE_TO_PARENT, +1.0f,
+				Animation.RELATIVE_TO_PARENT, +1f,
 				Animation.RELATIVE_TO_PARENT, 0.0f,
 				Animation.RELATIVE_TO_PARENT, 0.0f);
 		outtoRight.setDuration(3000);
