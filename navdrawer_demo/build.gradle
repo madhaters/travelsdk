@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+
+android {
+	compileSdkVersion rootProject.ext.compileSdkVersion
+	buildToolsVersion rootProject.ext.buildToolsVersion
+
+	defaultConfig {
+		applicationId "ru.aviasales.navdrawerdemo"
+		minSdkVersion 18
+		targetSdkVersion rootProject.ext.targetSdkVersion
+		versionCode 1
+		versionName "1.0"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
+	repositories {
+		mavenCentral()
+		maven { url 'http://android.aviasales.ru/repositories/' }
+		maven {
+			url 'http://aviasalesandroid.fvds.ru:8080/nexus/content/repositories/as_android_beta/'
+			credentials {
+				username mavenUser
+				password mavenPassword
+			}
+		}
+	}
+	lintOptions {
+		checkReleaseBuilds false
+		abortOnError false
+	}
+}
+
+dependencies {
+	compile fileTree(dir: 'libs', include: ['*.jar'])
+	testCompile 'junit:junit:4.12'
+	compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+	compile "com.android.support:design:$rootProject.ext.supportVersion"
+
+	compile project(':aviasalestemplate')
+}

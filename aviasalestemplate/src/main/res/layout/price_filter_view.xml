@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/llay_price_filter_view_filter"
+		android:layout_width="fill_parent"
+		android:orientation="vertical"
+		android:paddingTop="19dp"
+		android:visibility="visible"
+		android:gravity="center_vertical"
+		android:layout_height="wrap_content">
+
+	<com.devspark.robototextview.widget.RobotoTextView
+			android:id="@+id/tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="14dp"
+			app:typeface="roboto_medium"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:textColor="@color/base_filter_title_text_color"/>
+
+	<com.devspark.robototextview.widget.RobotoTextView
+			android:id="@+id/tv_values"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="22dp"
+			android:gravity="center_horizontal"
+			app:typeface="roboto_medium"
+			android:layout_marginRight="16dp"
+			android:layout_marginLeft="16dp"
+			android:textColor="@color/base_filter_value_color"/>
+
+	<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginLeft="20dp"
+			android:layout_marginRight="20dp"
+			android:gravity="bottom">
+
+		<ru.aviasales.template.ui.view.RangeBar
+				android:id="@+id/sbar_price_filter_view"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:layout_marginBottom="21dp"
+				android:layout_marginTop="20dp"
+				android:layout_gravity="center"
+				style="@style/filters_seekbar"/>
+	</LinearLayout>
+</LinearLayout>

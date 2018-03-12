@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'http://android.aviasales.ru/repositories/' }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "ru.aviasales.ads_example"
+        minSdkVersion 18
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.1"
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+            ext.betaDistributionNotifications = true
+            ext.betaDistributionGroupAliases = "as-android-dev"
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+	lintOptions {
+		checkReleaseBuilds false
+		abortOnError false
+	}
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:multidex:1.0.1'
+    compile project(':appodeallib')
+    compile project(':aviasalestemplate')
+//	compile 'ru.aviasales.template:aviasalesSdkTemplate:2.1.10'
+//	compile 'ru.aviasales.template:appodeallib:2.1.10'
+
+    compile "com.google.android.gms:play-services-ads:$rootProject.ext.gmsVersion"
+}

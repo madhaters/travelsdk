@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/llay_base_range_seekbar_filter_view"
+		android:layout_width="fill_parent"
+		android:orientation="vertical"
+		android:background="@color/white"
+		android:paddingTop="19dp"
+		android:layout_height="wrap_content">
+
+	<com.devspark.robototextview.widget.RobotoTextView
+			android:id="@+id/tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="14dp"
+			app:typeface="roboto_medium"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:textColor="@color/base_filter_title_text_color"/>
+
+	<com.devspark.robototextview.widget.RobotoTextView
+			android:id="@+id/tv_values"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="22dp"
+			android:gravity="center_horizontal"
+			android:textColor="@color/base_filter_value_color"
+			app:typeface="roboto_medium"
+			android:layout_marginRight="16dp"
+			android:layout_marginLeft="16dp"/>
+
+	<LinearLayout
+			android:id="@+id/llay_base_range_seekbar_filter_view_filter"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:visibility="visible"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="21dp"
+			android:layout_marginTop="20dp"
+			android:layout_marginLeft="18dp"
+			android:layout_marginRight="18dp"
+			android:layout_alignParentBottom="true"
+			android:layout_gravity="center"
+			android:layout_height="wrap_content">
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+project.group = GROUP
+version = VERSION_NAME
+
+android {
+	compileSdkVersion rootProject.ext.compileSdkVersion
+	buildToolsVersion rootProject.ext.buildToolsVersion
+
+	defaultConfig {
+		minSdkVersion 18
+		targetSdkVersion rootProject.ext.targetSdkVersion
+		multiDexEnabled true
+	}
+
+	repositories {
+		jcenter()
+		mavenCentral()
+		maven { url 'http://android.aviasales.ru/repositories/' }
+	}
+}
+
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+dependencies {
+	compile fileTree(include: ['*.jar'], dir: 'libs')
+	testCompile 'junit:junit:4.12'
+	compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    compile project(':adsinterface')
+
+	compile 'com.android.support:multidex:1.0.0'
+	compile "com.google.android.gms:play-services-ads:$rootProject.ext.gmsVersion"
+	compile 'net.pubnative:library:1.4.8'
+}
+
+apply from: rootProject.file('release.gradle')

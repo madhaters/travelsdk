@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+
+project.group = GROUP
+version = VERSION_NAME
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'http://android.aviasales.ru/repositories/' }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+
+    compile 'ru.aviasales:aviasalesSdk:2.1.10-sdk'
+    compile project(':adsinterface')
+    compile project(':expandedlistview')
+
+    compile 'com.github.johnkil.android-robototextview:robototextview:2.2.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
+    compile "com.google.android.gms:play-services-ads:$rootProject.ext.gmsVersion"
+}
+
+apply plugin: 'maven'
+
+task copyLanguageFolders() {
+
+    ['values-az/', 'values-hy/', 'values-be/', 'values-kk/', 'values-ky/', 'values-ro/', 'values-uz/', 'values-uk/', 'values-ka/'].each { dest ->
+        copy {
+            from 'src/main/res/values-ru/'
+            into 'src/main/res/' + dest
+            include('strings.xml')
+        }
+    }
+}
+
+apply from: rootProject.file('release.gradle')

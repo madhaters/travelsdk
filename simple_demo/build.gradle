@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'http://android.aviasales.ru/repositories/' }
+    maven {
+        url 'http://aviasalesandroid.fvds.ru:8080/nexus/content/repositories/as_android_beta/'
+        credentials {
+            username mavenUser
+            password mavenPassword
+        }
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "ru.aviasales.example"
+        minSdkVersion 18
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.1"
+    }
+    buildTypes {
+        debug {
+            ext.betaDistributionNotifications = true
+            ext.betaDistributionGroupAliases = "as-android-dev"
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+	lintOptions {
+		checkReleaseBuilds false
+		abortOnError false
+	}
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':aviasalestemplate')
+
+    compile "com.google.android.gms:play-services-ads:$rootProject.ext.gmsVersion"
+}

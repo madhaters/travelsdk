@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="@color/aviasales_results_background"
+		android:orientation="vertical">
+
+	<ScrollView
+			android:id="@+id/view_pager"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginBottom="50dp"
+			android:orientation="vertical">
+
+		<LinearLayout
+				android:id="@+id/ll_filters_container"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical"
+				android:paddingBottom="80dp"/>
+
+	</ScrollView>
+
+	<ru.aviasales.template.ui.view.filters.ClearFiltersView
+			android:id="@+id/clear_filters_view"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"
+			android:layout_marginBottom="70dp"/>
+
+	<com.devspark.robototextview.widget.RobotoTextView
+			android:id="@+id/btn_apply"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:layout_alignParentBottom="true"
+			android:layout_gravity="bottom"
+			android:background="@drawable/filters_apply_button"
+			android:gravity="center"
+			android:text="@string/apply_filters"
+			android:textAllCaps="true"
+			android:textColor="@color/white"
+			android:textSize="16dp"/>
+
+</RelativeLayout>

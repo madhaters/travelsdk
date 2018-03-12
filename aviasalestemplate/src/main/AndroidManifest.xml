@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ru.aviasales.template">
+
+    <application
+        android:allowBackup="true">
+        <activity
+            android:name="ru.aviasales.template.BrowserActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AviasalesTemplateTheme">
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+    </application>
+
+</manifest>
