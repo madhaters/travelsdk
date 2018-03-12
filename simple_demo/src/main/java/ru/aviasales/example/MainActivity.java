@@ -1,9 +1,12 @@
 package ru.aviasales.example;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import ru.aviasales.core.AviasalesSDK;
 import ru.aviasales.core.identification.SdkConfig;
@@ -24,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 		AviasalesSDK.getInstance().init(this, new SdkConfig(TRAVEL_PAYOUTS_MARKER, TRAVEL_PAYOUTS_TOKEN, SDK_HOST));
 		setContentView(R.layout.activity_main);
 
-
 		init();
 	}
 
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 		if (getSupportActionBar() != null) {
 			getSupportActionBar().setIcon(R.drawable.app_icon);
 			getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 		}
 	}
 

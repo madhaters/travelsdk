@@ -2,6 +2,7 @@ package ru.aviasales.template.ui.fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -39,6 +40,19 @@ public abstract class BaseFragment extends Fragment implements BackPressable {
 		if (removedDialogFragmentTag != null) {
 			resumeDialog(removedDialogFragmentTag);
 			removedDialogFragmentTag = null;
+		}
+		if (getActivity()!=null && getActionBar()!=null) {
+			if (this instanceof SearchFormFragment) {
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+					getActivity().getWindow().setStatusBarColor(Color.parseColor("#0c9cd0"));
+				}
+				getActionBar().hide();
+			} else {
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+					getActivity().getWindow().setStatusBarColor(getResources().getColor(R.color.colorAsPrimaryDark));
+				}
+				getActionBar().show();
+			}
 		}
 		super.onResume();
 	}

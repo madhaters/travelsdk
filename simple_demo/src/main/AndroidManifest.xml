@@ -24,7 +24,6 @@
             android:name=".MainActivity"
             android:logo="@drawable/app_icon"
             android:icon="@drawable/app_icon"
-            android:theme="@style/AppTheme"
             >
         </activity>
         <activity android:name=".SplashActivity"
