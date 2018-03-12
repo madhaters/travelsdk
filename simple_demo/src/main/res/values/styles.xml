@@ -3,4 +3,13 @@
 
 	<style name="AppTheme" parent="AviasalesTemplateTheme">
 	</style>
+
+	<style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="colorControlActivated">@color/colorAviasalesMain</item>
+		<item name="colorPrimary">@color/colorAsPrimary</item>
+		<item name="colorPrimaryDark">@color/colorAsPrimaryDark</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowTranslucentStatus">true</item>
+	</style>
 </resources>
