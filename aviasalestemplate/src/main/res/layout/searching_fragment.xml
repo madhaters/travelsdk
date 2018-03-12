@@ -17,6 +17,15 @@
 			android:layout_marginBottom="5dp"
 			android:orientation="horizontal"/>
 
+	<ImageView
+		android:layout_width="300dp"
+		android:layout_height="250dp"
+		android:src="@drawable/fly_logo"
+		android:id="@+id/flyLogo"
+		android:scaleType="fitXY"
+		android:layout_centerVertical="true"
+		/>
+
 	<ProgressBar
 			android:id="@+id/pb_searching"
 			style="?android:attr/progressBarStyleHorizontal"

@@ -12,6 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -54,7 +60,7 @@ public class SearchingFragment extends BaseFragment {
 		setTextToActionBar(getString(R.string.searching_information));
 		setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
 		setUpMrecAd();
-
+		setupLoadingLogo(rootView);
 		return rootView;
 	}
 
@@ -207,5 +213,67 @@ public class SearchingFragment extends BaseFragment {
 	public void onPause() {
 		isPaused = true;
 		super.onPause();
+	}
+
+	public void setupLoadingLogo(View rootView) {
+		final ImageView loadingView= (ImageView) rootView.findViewById(R.id.flyLogo);
+		Animation animation= AnimationUtils.loadAnimation(getContext(),R.anim.progress_logo);
+		animation.setRepeatCount(Animation.INFINITE);
+		final Animation toRight=outToRightAnimation();
+		final Animation inLeft=inFromLeftAnimation();
+		toRight.setAnimationListener(new Animation.AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				loadingView.startAnimation(inLeft);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+
+			}
+		});
+		inLeft.setAnimationListener(new Animation.AnimationListener() {
+			@Override
+			public void onAnimationStart(Animation animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				loadingView.startAnimation(toRight);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+
+			}
+		});
+
+		loadingView.startAnimation(inLeft);
+	}
+	private Animation inFromLeftAnimation() {
+		Animation inFromLeft = new TranslateAnimation(
+				Animation.RELATIVE_TO_PARENT, -1.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f);
+		inFromLeft.setDuration(3000);
+		inFromLeft.setInterpolator(new LinearInterpolator());
+		return inFromLeft;
+	}
+	private Animation outToRightAnimation() {
+		Animation outtoRight = new TranslateAnimation(
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, +1.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f,
+				Animation.RELATIVE_TO_PARENT, 0.0f);
+		outtoRight.setDuration(3000);
+		outtoRight.setInterpolator(new LinearInterpolator());
+		return outtoRight;
 	}
 }
