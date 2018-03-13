@@ -1,12 +1,9 @@
 package ru.aviasales.example;
 
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 
 import ru.aviasales.core.AviasalesSDK;
 import ru.aviasales.core.identification.SdkConfig;
