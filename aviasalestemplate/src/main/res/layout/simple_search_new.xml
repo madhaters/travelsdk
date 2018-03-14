@@ -30,7 +30,7 @@
                 <ru.aviasales.template.ui.view.AllerTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="From"
+                    android:text="@string/airport_from"
                     android:textAllCaps="true"
                     android:textColor="#000" />
 
@@ -65,7 +65,7 @@
                 <ru.aviasales.template.ui.view.AllerTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="To"
+                    android:text="@string/airport_to"
                     android:textAllCaps="true"
                     android:textColor="#000" />
 
@@ -111,7 +111,7 @@
                 <ru.aviasales.template.ui.view.AllerTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Depart"
+                    android:text="@string/depart_time"
                     android:textAllCaps="true"
                     android:textColor="#1D96DB" />
 
@@ -143,7 +143,7 @@
                 <ru.aviasales.template.ui.view.AllerTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Return"
+                    android:text="@string/return_time"
                     android:textAllCaps="true"
                     android:textColor="#1D96DB" />
 
@@ -169,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:text="Passengers"
+            android:text="@string/passengers"
             android:textAllCaps="true"
             android:textColor="#1D96DB"
             android:textSize="20sp" />
@@ -214,7 +214,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Adults"
+                    android:text="@string/adults"
                     android:textAllCaps="true"
                     android:textColor="#000"
                     android:textSize="12sp" />
@@ -260,7 +260,7 @@
                     android:textSize="12sp"
                     android:textColor="#000"
                     android:layout_gravity="center_horizontal"
-                    android:text="Children"
+                    android:text="@string/children"
                     android:textAllCaps="true"
                     />
             </LinearLayout>
@@ -303,7 +303,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Infants"
+                    android:text="@string/infants"
                     android:textColor="#000"
                     android:textSize="12sp"
                     android:textAllCaps="true"
@@ -321,7 +321,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="20dp"
-            android:text="Class"
+            android:text="@string/class_travel"
             android:textAllCaps="true"
             android:textColor="#1D96DB"
             android:textSize="20sp" />
@@ -338,7 +338,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Economy"
+                android:text="@string/economy"
                 android:checked="true"
                 android:id="@+id/btn_economy"
                 android:textAllCaps="true"
@@ -349,7 +349,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Business"
+                android:text="@string/business"
                 android:id="@+id/btn_business"
                 android:textAllCaps="true"
                 android:textColor="#000"
@@ -360,7 +360,6 @@
             android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_below="@+id/lt_trip_class"
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -368,6 +367,6 @@
             android:background="@drawable/search_form_button"
             android:text="@string/search_form_search_button"
             android:textColor="@color/white"
-            android:textSize="14dp" />
+            android:textSize="14sp" />
     </LinearLayout>
 </ScrollView>

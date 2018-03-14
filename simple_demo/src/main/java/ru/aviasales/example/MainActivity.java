@@ -30,11 +30,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		if (getSupportActionBar() != null) {
-			getSupportActionBar().setIcon(R.drawable.app_icon);
-			getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-		}
 	}
 
 	private void init() {

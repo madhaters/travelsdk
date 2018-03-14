@@ -191,7 +191,20 @@
 	<string name="apply_filters">Apply filters</string>
 	<string name="pay_type">Payment options</string>
 	<string name="base_filter_stop_over_count">Layovers</string>
+
 	<string name="base_filter_landing">To</string>
 	<string name="base_filter_landing_back">Return Landing Time</string>
+
+    <string name="airport_from">From</string>
+    <string name="airport_to">To</string>
+    <string name="depart_time">Depart</string>
+    <string name="return_time">Return</string>
+    <string name="passengers">Passengers</string>
+    <string name="adults">Adults</string>
+    <string name="children">Children</string>
+    <string name="infants">Infants</string>
+    <string name="class_travel">Class</string>
+    <string name="economy">Economy</string>
+    <string name="business">Business</string>
 
 </resources>

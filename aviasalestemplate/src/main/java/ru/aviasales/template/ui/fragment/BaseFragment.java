@@ -124,8 +124,6 @@ public abstract class BaseFragment extends Fragment implements BackPressable {
 			return;
 		}
 		getActionBar().setTitle(textToActionBar);
-		getActionBar().setIcon(R.drawable.app_icon);
-		getActionBar().setDisplayShowHomeEnabled(true);
 	}
 
 	private void removeDialogFragment() {
